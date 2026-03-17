@@ -1,15 +1,16 @@
-local user = "legendlego000-stack"
-local repo = "Brainrot-VIP"
-local base = "https://raw.githubusercontent.com/"..user.."/"..repo.."/main/Modules/"
+-- [[ GLOBAL LOADER - BRAINROT VIP ]]
+local base = "https://raw.githubusercontent.com/legendlego000-stack/Brainrot-VIP/main/Modules/"
 
--- Статистика онлайна (имитация админ-панели)
-_G.OnlineCount = "1 (You)" 
-
--- Загрузка всех модулей по порядку
+-- Загрузка всех частей
 loadstring(game:HttpGet(base.."Protection.lua"))()
 loadstring(game:HttpGet(base.."Optimization.lua"))()
 loadstring(game:HttpGet(base.."PacketFilter.lua"))()
 loadstring(game:HttpGet(base.."DdosEngine.lua"))()
 loadstring(game:HttpGet(base.."Interface.lua"))()
 
-print("SYSTEM FULLY OPERATIONAL")
+-- Админ-панель (уведомление)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "VIP АКТИВИРОВАН",
+    Text = "Добро пожаловать, legendlego000!",
+    Duration = 5
+})
